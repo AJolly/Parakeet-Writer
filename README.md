@@ -11,54 +11,54 @@ The application maintains the core functionality of the original Whisper-Writer 
 
 WHAT'S NEW IN PARAKEET-WRITER
 -----------------------------
-• Replaced OpenAI Whisper with NVIDIA NeMo Parakeet ASR model (parakeet-tdt-0.6b-v2)
-• Added support for Parakeet-TDT-0.6B-V2 model (state-of-the-art accuracy)
-• Included both desktop application and web interface options
-• Created separate virtual environment setup for NeMo dependencies
-• Added Gradio web interface for browser-based transcription
-• Implemented client-server architecture for flexible deployment
-• Enhanced audio processing with NeMo's optimized pipelines
+- Replaced OpenAI Whisper with NVIDIA NeMo Parakeet ASR model (parakeet-tdt-0.6b-v2)
+- Added support for Parakeet-TDT-0.6B-V2 model (state-of-the-art accuracy)
+- Included both desktop application and web interface options
+- Created separate virtual environment setup for NeMo dependencies
+- Added Gradio web interface for browser-based transcription
+- Implemented client-server architecture for flexible deployment
+- Enhanced audio processing with NeMo's optimized pipelines
 
 KEY FEATURES
 ------------
-• Real-time speech-to-text transcription using Parakeet models
-• Multiple recording modes (continuous, voice activity detection, push-to-talk)
-• Customizable keyboard shortcuts
-• Desktop GUI application (PyQt5-based)
-• Web interface option (Gradio-based)
-• High accuracy transcription with punctuation and capitalization
-• Automatic text insertion into active applications
-• Configurable audio settings and post-processing options
+- Real-time speech-to-text transcription using Parakeet models
+- Multiple recording modes (continuous, voice activity detection, push-to-talk)
+- Customizable keyboard shortcuts
+- Desktop GUI application (PyQt5-based)
+- Web interface option (Gradio-based)
+- High accuracy transcription with punctuation and capitalization
+- Automatic text insertion into active applications
+- Configurable audio settings and post-processing options
 
 IMPORTANT LIMITATIONS & SETTINGS COMPATIBILITY
 ----------------------------------------------
 ⚠️ CRITICAL: Many settings from the original WhisperWriter will cause crashes if used with Parakeet-Writer.
 
 UNSAFE SETTINGS (will cause crashes):
-• Model selection/paths (use only Parakeet models)
-• Compute type settings (int8/float16/float32)
-• Device selection (handled automatically by NeMo)
-• VAD filter settings
-• Condition on previous text
-• API-related settings (base_url, api_key)
+- Model selection/paths (use only Parakeet models)
+- Compute type settings (int8/float16/float32)
+- Device selection (handled automatically by NeMo)
+- VAD filter settings
+- Condition on previous text
+- API-related settings (base_url, api_key)
 
 SAFE SETTINGS (can be modified):
-• Hotkey combinations (activation_key)
-• Recording modes
-• Audio device selection (sound_device)
-• Post-processing options (remove_trailing_period, add_trailing_space)
-• Recording duration and silence thresholds
-• Writing key press delay
-• Status window visibility
+- Hotkey combinations (activation_key)
+- Recording modes
+- Audio device selection (sound_device)
+- Post-processing options (remove_trailing_period, add_trailing_space)
+- Recording duration and silence thresholds
+- Writing key press delay
+- Status window visibility
 
 SYSTEM REQUIREMENTS
 -------------------
-• Windows 11 (tested) or Windows 10
-• Python 3.8 or higher
-• NVIDIA GPU recommended (CPU support available but slower)
-• At least 4GB RAM (8GB+ recommended)
-• 5GB+ free disk space for models and dependencies
-• Microphone/audio input device
+- Windows 11 (tested) or Windows 10
+- Python 3.8 or higher
+- NVIDIA GPU recommended (CPU support available but slower)
+- At least 4GB RAM (8GB+ recommended)
+- 5GB+ free disk space for models and dependencies
+- Microphone/audio input device
 
 INSTALLATION GUIDE FOR WINDOWS 11
 ---------------------------------
@@ -113,32 +113,33 @@ Option 2: Web Interface
 
 USAGE TIPS
 ----------
-• First run will download the Parakeet model (may take several minutes)
-• Start with default settings and modify only safe settings
-• Use continuous recording mode for best experience
-• Ensure microphone permissions are granted to Python
-• For best accuracy, speak clearly with minimal background noise
-• Test with the web interface first to verify setup
+- First run will download the Parakeet model (may take several minutes)
+- Start with default settings and modify only safe settings
+- Use continuous recording mode for best experience
+- Ensure microphone permissions are granted to Python
+- For best accuracy, speak clearly with minimal background noise
+- Test with the web interface first to verify setup
 
 TROUBLESHOOTING
 --------------
-• If model download fails, check internet connection and try again
-• For GPU issues, ensure NVIDIA drivers are up to date
-• For permission errors, run as administrator
-• Check that no other applications are blocking microphone access
+- If model download fails, check internet connection and try again
+- For GPU issues, ensure NVIDIA drivers are up to date
+- For permission errors, run as administrator
+- Check that no other applications are blocking microphone access
 
 TECHNICAL ARCHITECTURE
 ----------------------
 The project consists of several key components:
 
-• transcription_parakeet.py: Core NeMo integration and audio processing
-• run_whisperwriter_parakeet.py: Main desktop application launcher
-• parakeet_web.py: Gradio web interface implementation
-• parakeet_server.py / parakeet_client.py: Client-server architecture
-• config_parakeet.yaml: Safe default configuration settings
+- transcription_parakeet.py: Core NeMo integration and audio processing
+- run_whisperwriter_parakeet.py: Main desktop application launcher
+- parakeet_web.py: Gradio web interface implementation
+- parakeet_server.py / parakeet_client.py: Client-server architecture
+- config_parakeet.yaml: Safe default configuration settings
 
 FILE STRUCTURE
 --------------
+```
 Parakeet-Writer/
 ├── run_whisperwriter_parakeet.py    # Main desktop app
 ├── run_gradio.py                    # Web interface launcher
@@ -149,14 +150,15 @@ Parakeet-Writer/
 ├── LICENSE.md                       # Open source licenses
 ├── LICENSES.txt                     # Dependency & component license information
 └── README.md                        # This file
+```
 
 PERFORMANCE NOTES
 ----------------
-• First transcription may be slower due to model initialization
-• GPU acceleration provides significant speed improvements
-• Model caching improves subsequent performance
-• Audio preprocessing can affect transcription quality
-• Network connectivity required for initial model download
+- First transcription may be slower due to model initialization
+- GPU acceleration provides significant speed improvements
+- Model caching improves subsequent performance
+- Audio preprocessing can affect transcription quality
+- Network connectivity required for initial model download
 
 CREDITS
 -------
@@ -183,11 +185,11 @@ LICENSING
 ---------
 This project incorporates components under various open source licenses:
 
-• Parakeet-Writer modifications: GNU General Public License v3.0 (GPL-3.0)
-• Original WhisperWriter: GNU General Public License v3.0 (GPL-3.0)
-• NVIDIA NeMo: Apache License 2.0
-• PyQt5: GPL-3.0 or Commercial License
-• Other dependencies: Various (see LICENSES.txt for complete details)
+- Parakeet-Writer modifications: GNU General Public License v3.0 (GPL-3.0)
+-  Original WhisperWriter: GNU General Public License v3.0 (GPL-3.0)
+- NVIDIA NeMo: Apache License 2.0
+- PyQt5: GPL-3.0 or Commercial License
+- Other dependencies: Various (see LICENSES.txt for complete details)
 
 📄 **Main License**: [LICENSE.md](LICENSE.md) (GPL-3.0)  
 📄 **Complete License Information**: [LICENSES.txt](LICENSES.txt)
@@ -198,18 +200,18 @@ This ensures compliance with all open source license requirements.
 SUPPORT & ISSUES
 ---------------
 This is a community modification of WhisperWriter. For issues specific to:
-• Parakeet integration: Create issues in your GitHub repository
-• Original WhisperWriter features: See https://github.com/savbell/whisper-writer
-• NeMo/Parakeet models: See https://github.com/NVIDIA/NeMo
+- Parakeet integration: Create issues in your GitHub repository
+- Original WhisperWriter features: See https://github.com/savbell/whisper-writer
+- NeMo/Parakeet models: See https://github.com/NVIDIA/NeMo
 
 CONTRIBUTING
 -----------
 Contributions are welcome! When contributing:
-• Maintain compatibility with safe settings only
-• Test thoroughly with both desktop and web interfaces
-• Follow the coding style of the original WhisperWriter project
-• Update documentation for any new features
-• Ensure all changes maintain open source license compatibility
+- Maintain compatibility with safe settings only
+- Test thoroughly with both desktop and web interfaces
+- Follow the coding style of the original WhisperWriter project
+- Update documentation for any new features
+- Ensure all changes maintain open source license compatibility
 
 🤝 **How to Contribute:**
 - 🐛 **Report bugs**: Use the [Issues](https://github.com/WarneDoc/Parakeet-Writer/issues) tab
