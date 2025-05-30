@@ -1,7 +1,7 @@
 PARAKEET-WRITER
 ===============
 
-A modification of Whisper-Writer that uses NVIDIA NeMo's Parakeet ASR models instead of OpenAI Whisper for speech-to-text transcription.
+A modification of Whisper-Writer that uses NVIDIA NeMo's Parakeet ASR model (V2) instead of OpenAI Whisper for speech-to-text transcription.
 
 OVERVIEW
 --------
