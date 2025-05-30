@@ -53,11 +53,6 @@ Thank you for your interest in contributing to Parakeet-Writer! This project wel
 
 ## 🛡️ Development Guidelines
 
-### Safe Settings Only
-- **CRITICAL**: Only modify safe settings to prevent crashes
-- Safe: hotkeys, recording modes, audio devices, post-processing
-- Unsafe: model paths, compute types, VAD filters, API settings
-
 ### Code Style
 - Follow the existing code structure
 - Maintain compatibility with the original WhisperWriter architecture
@@ -95,7 +90,6 @@ Thank you for your interest in contributing to Parakeet-Writer! This project wel
 ## 🚫 What NOT to Change
 
 - Core NeMo/Parakeet model integration (unless you're an expert)
-- Unsafe configuration options that cause crashes
 - License files or attribution
 - Core WhisperWriter architecture without discussion
 

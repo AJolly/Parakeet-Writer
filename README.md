@@ -5,14 +5,14 @@ A modification of WhisperWriter that uses NVIDIA NeMo's Parakeet ASR models inst
 
 OVERVIEW
 --------
-Parakeet-Writer is a desktop speech-to-text application built upon the excellent WhisperWriter project by savbell. This modified version replaces the Whisper speech recognition engine with NVIDIA's state-of-the-art Parakeet ASR models from the NeMo framework, providing enhanced transcription accuracy and performance.
+Parakeet-Writer is a desktop speech-to-text application built upon the excellent Whisper-Writer project by savbell. This modified version replaces the Whisper speech recognition engine with NVIDIA's state-of-the-art Parakeet ASR model (V2) from the NeMo framework, providing enhanced transcription accuracy and performance.
 
-The application maintains the core functionality of the original WhisperWriter - real-time speech transcription with customizable hotkeys and recording modes - while leveraging the advanced capabilities of NVIDIA's Parakeet models.
+The application maintains the core functionality of the original Whisper-Writer - real-time speech transcription with customizable hotkeys and recording modes - while leveraging the advanced capabilities of NVIDIA's Parakeet model.
 
 WHAT'S NEW IN PARAKEET-WRITER
 -----------------------------
-• Replaced OpenAI Whisper with NVIDIA NeMo Parakeet ASR models
-• Added support for Parakeet-TDT-0.6B model (state-of-the-art accuracy)
+• Replaced OpenAI Whisper with NVIDIA NeMo Parakeet ASR model (parakeet-tdt-0.6b-v2)
+• Added support for Parakeet-TDT-0.6B-V2 model (state-of-the-art accuracy)
 • Included both desktop application and web interface options
 • Created separate virtual environment setup for NeMo dependencies
 • Added Gradio web interface for browser-based transcription
@@ -124,7 +124,6 @@ TROUBLESHOOTING
 --------------
 • If model download fails, check internet connection and try again
 • For GPU issues, ensure NVIDIA drivers are up to date
-• If transcription is slow, consider using CPU mode or smaller model
 • For permission errors, run as administrator
 • Check that no other applications are blocking microphone access
 
@@ -147,8 +146,9 @@ Parakeet-Writer/
 ├── transcription_parakeet.py        # Core transcription logic
 ├── whisper-writer-parakeet/         # Modified WhisperWriter source
 ├── config_parakeet.yaml             # Safe configuration
-├── LICENSES.txt                     # Open source licenses
-└── README.txt                       # This file
+├── LICENSE.md                       # Open source licenses
+├── LICENSES.txt                     # Dependency & component license information
+└── README.md                        # This file
 
 PERFORMANCE NOTES
 ----------------
@@ -189,14 +189,11 @@ This project incorporates components under various open source licenses:
 • PyQt5: GPL-3.0 or Commercial License
 • Other dependencies: Various (see LICENSES.txt for complete details)
 
-📄 **Main License**: [LICENSE](LICENSE) (GPL-3.0)  
+📄 **Main License**: [LICENSE.md](LICENSE.md) (GPL-3.0)  
 📄 **Complete License Information**: [LICENSES.txt](LICENSES.txt)
 
 For complete license information, see the LICENSES.txt file in this directory.
 This ensures compliance with all open source license requirements.
-
-When uploading to GitHub, the license information will be automatically
-detected from the LICENSE file in the repository root.
 
 SUPPORT & ISSUES
 ---------------
@@ -234,6 +231,6 @@ VERSION INFORMATION
 Parakeet-Writer Version: 1.0
 Based on WhisperWriter: Latest (2024)
 NeMo Framework: 2.3.1+
-Parakeet Model: TDT-0.6B
+Parakeet Model: TDT-0.6B-V2
 
 Last Updated: January 2025 
