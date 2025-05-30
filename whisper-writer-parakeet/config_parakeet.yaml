@@ -1,0 +1,49 @@
+# Parakeet ASR Configuration File
+# This configuration is optimized for the Parakeet model and avoids Whisper-specific settings
+
+recording_options:
+  recording_mode: "voice_activity_detection"  # Safe options: continuous, voice_activity_detection, press_to_toggle, hold_to_record
+  sample_rate: 16000  # Parakeet works well with 16kHz
+  min_duration: 100  # Minimum recording duration in ms
+  silence_duration: 900  # How long to wait for silence before stopping (ms)
+  sound_device: null  # null = default device, or specify device index
+
+model_options:
+  use_api: false  # Set to true to use OpenAI API instead of local Parakeet
+  
+  # Common settings (safe for both Parakeet and API)
+  common:
+    language: null  # null = auto-detect, or specify language code
+    initial_prompt: ""  # Optional prompt to guide transcription
+    temperature: 0.0  # 0.0 = deterministic, higher = more creative
+  
+  # API settings (when use_api: true)
+  api:
+    model: "whisper-1"
+    base_url: "https://api.openai.com/v1"
+  
+  # Local Parakeet settings - SAFE TO USE
+  local:
+    # Note: Parakeet-specific settings are handled in the transcription module
+    # These Whisper settings are ignored when using Parakeet:
+    model: "base"  # Ignored by Parakeet
+    model_path: null  # Ignored by Parakeet
+    device: "auto"  # Ignored by Parakeet (NeMo handles device selection)
+    compute_type: "float16"  # Ignored by Parakeet
+    condition_on_previous_text: false  # Ignored by Parakeet
+    vad_filter: true  # Ignored by Parakeet
+
+# Key bindings - SAFE TO MODIFY
+key_bindings:
+  activation_key: "ctrl+shift+space"
+
+# Post-processing options - SAFE TO MODIFY
+post_processing:
+  remove_trailing_period: false
+  add_trailing_space: true
+  remove_capitalization: false
+
+# Misc options - SAFE TO MODIFY
+misc:
+  hide_status_window: false
+  noise_on_completion: true 
