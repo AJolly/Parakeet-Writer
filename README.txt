@@ -189,6 +189,9 @@ This project incorporates components under various open source licenses:
 • PyQt5: GPL-3.0 or Commercial License
 • Other dependencies: Various (see LICENSES.txt for complete details)
 
+📄 **Main License**: [LICENSE](LICENSE) (GPL-3.0)  
+📄 **Complete License Information**: [LICENSES.txt](LICENSES.txt)
+
 For complete license information, see the LICENSES.txt file in this directory.
 This ensures compliance with all open source license requirements.
 
