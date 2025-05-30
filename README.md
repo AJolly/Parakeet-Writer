@@ -214,6 +214,21 @@ Contributions are welcome! When contributing:
 • Update documentation for any new features
 • Ensure all changes maintain open source license compatibility
 
+🤝 **How to Contribute:**
+- 🐛 **Report bugs**: Use the [Issues](https://github.com/WarneDoc/Parakeet-Writer/issues) tab
+- 💡 **Suggest features**: Submit feature requests via Issues
+- 🔧 **Submit code**: Fork the repo and create pull requests
+- 📖 **Improve docs**: Help make installation and usage clearer
+
+📋 **See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines**
+
+**Current Priority Areas:**
+- Bug fixes and stability improvements
+- Better documentation and setup guides
+- UI/UX enhancements for desktop and web interfaces
+- Performance optimizations
+- Cross-platform compatibility (macOS, Linux)
+
 VERSION INFORMATION
 ------------------
 Parakeet-Writer Version: 1.0
