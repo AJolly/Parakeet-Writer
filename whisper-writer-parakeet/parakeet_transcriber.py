@@ -10,6 +10,7 @@ import json
 import tempfile
 import soundfile as sf
 import numpy as np
+import torch
 
 # Completely suppress ALL output from NeMo
 import logging
@@ -35,11 +36,23 @@ def suppress_all_output():
             sys.stderr = old_stderr
 
 def load_parakeet_model():
-    """Load the Parakeet model using the same approach as the working Gradio interface."""
+    """Load the Parakeet model using GPU if available."""
     try:
         with suppress_all_output():
             import nemo.collections.asr as nemo_asr
+            
+            # Check if CUDA is available
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            
+            # Load model with explicit device
             model = nemo_asr.models.ASRModel.from_pretrained('nvidia/parakeet-tdt-0.6b-v2')
+            
+            # Explicitly move model to GPU if available
+            if torch.cuda.is_available():
+                model = model.to(device)
+                # Ensure model is in eval mode for inference
+                model.eval()
+            
         return model
     except Exception as e:
         return None
@@ -51,6 +64,7 @@ def transcribe_audio_file(model, audio_file_path):
             return ""
             
         with suppress_all_output():
+            # Use the model's transcribe method which should respect the device
             result = model.transcribe([audio_file_path])
         
         if result and len(result) > 0:
