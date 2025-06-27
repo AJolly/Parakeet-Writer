@@ -1,0 +1,66 @@
+# Virtual Environments
+venv_parakeet/
+venv/
+env/
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# System-specific files with sensitive paths
+temp_audio_path.txt
+*.tmp
+*.temp
+
+# Virtual environment configuration with local paths
+pyvenv.cfg
+
+# Local configuration files that might contain system paths
+config_local.yaml
+config_personal.yaml
+
+# Audio cache and temporary files
+*.wav.tmp
+audio_cache/
+temp_audio/
+
+# Model cache (these can be large and will be downloaded automatically)
+.cache/
+models/
+*.nemo
+*.pt
+*.bin
+
+# Log files
+*.log
+logs/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows system files
+*.lnk
+
+# Backup files
+*.bak
+*.backup
+config.yaml.bak
+
+# Personal notes and development files
+NOTES.txt
+TODO.txt
+dev_notes/ 
