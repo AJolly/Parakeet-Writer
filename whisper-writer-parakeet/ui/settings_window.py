@@ -1,6 +1,7 @@
 import os
 import sys
 from dotenv import set_key, load_dotenv
+import sounddevice as sd
 from PyQt5.QtWidgets import (
     QApplication, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QComboBox, QCheckBox,
     QMessageBox, QTabWidget, QWidget, QSizePolicy, QSpacerItem, QToolButton, QStyle, QFileDialog
@@ -108,7 +109,10 @@ class SettingsWindow(BaseWindow):
         meta_type = meta.get('type')
         current_value = self.get_config_value(category, sub_category, key, meta)
 
-        if meta_type == 'bool':
+        # Special handling for sound_device - show microphone dropdown
+        if key == 'sound_device':
+            return self.create_microphone_selector(current_value)
+        elif meta_type == 'bool':
             return self.create_checkbox(current_value, key)
         elif meta_type == 'str' and 'options' in meta:
             return self.create_combobox(current_value, meta['options'])
@@ -131,8 +135,106 @@ class SettingsWindow(BaseWindow):
         widget.setCurrentText(value)
         return widget
 
+    def create_microphone_selector(self, current_value):
+        """Create a dropdown selector for microphones."""
+        widget = QComboBox()
+        
+        try:
+            # Get all audio devices
+            devices = sd.query_devices()
+            microphone_options = []
+            seen_devices = set()  # Track unique device names
+            
+            # Add default option
+            microphone_options.append("Default (System Default)")
+            
+            # Get hostapi names for reference
+            try:
+                hostapis = sd.query_hostapis()
+                hostapi_names = {i: api['name'] for i, api in enumerate(hostapis)}
+            except:
+                hostapi_names = {0: 'MME', 1: 'DirectSound', 2: 'WASAPI', 3: 'WDM-KS'}
+            
+            # Group devices by clean name
+            device_groups = {}
+            
+            for i, device in enumerate(devices):
+                if device['max_input_channels'] > 0:  # Has input channels
+                    # Use the device name as the grouping key
+                    clean_name = device['name']
+                    
+                    # Group by clean name
+                    if clean_name not in device_groups:
+                        device_groups[clean_name] = []
+                    
+                    # Add hostapi name to the device info
+                    hostapi_name = hostapi_names.get(device.get('hostapi', 0), 'Unknown')
+                    device_groups[clean_name].append((i, device, hostapi_name))
+            
+            # Add devices, preferring WASAPI > DirectSound > MME > WDM-KS
+            for clean_name, device_list in device_groups.items():
+                # Sort by API preference (lower number = higher priority)
+                def api_priority(device_tuple):
+                    _, device, hostapi_name = device_tuple
+                    if 'WASAPI' in hostapi_name:
+                        return 0  # Most preferred - low latency, modern
+                    elif 'DirectSound' in hostapi_name:
+                        return 1  # Good compatibility
+                    elif 'MME' in hostapi_name:
+                        return 2  # Legacy but stable
+                    else:  # WDM-KS and others
+                        return 3  # Direct hardware access, can be unstable
+                
+                device_list.sort(key=api_priority)
+                
+                # Take the best one for each unique device
+                best_device_id, best_device, best_api = device_list[0]
+                
+                # Create a clean display name
+                display_name = f"{best_device_id}: {clean_name}"
+                
+                # Add API info to help users understand quality/compatibility
+                if 'WASAPI' in best_api:
+                    display_name += " (WASAPI - Recommended)"
+                elif 'DirectSound' in best_api:
+                    display_name += " (DirectSound - Good)"
+                elif len(device_list) > 1:  # Multiple APIs available
+                    display_name += f" ({best_api}, +{len(device_list)-1} more)"
+                else:
+                    display_name += f" ({best_api})"
+                
+                microphone_options.append(display_name)
+            
+            widget.addItems(microphone_options)
+            
+            # Set current selection
+            if current_value is None or current_value == 0:
+                widget.setCurrentIndex(0)  # Default
+            else:
+                # Find the matching device
+                target_text = f"{current_value}:"
+                for i, item in enumerate(microphone_options):
+                    if item.startswith(target_text):
+                        widget.setCurrentIndex(i)
+                        break
+                else:
+                    # If not found, show as custom entry
+                    custom_text = f"Custom: Device {current_value}"
+                    widget.addItem(custom_text)
+                    widget.setCurrentText(custom_text)
+                    
+        except Exception as e:
+            # Fallback if sounddevice fails
+            widget.addItems([
+                "Default (System Default)",
+                f"Custom: Device {current_value if current_value is not None else 'Unknown'}"
+            ])
+            widget.setCurrentIndex(1 if current_value is not None else 0)
+            
+        return widget
+
     def create_line_edit(self, value, key=None):
-        widget = QLineEdit(value)
+        widget = QLineEdit(str(value) if value is not None else "")
         if key == 'api_key':
             widget.setEchoMode(QLineEdit.Password)
             widget.setText(os.getenv('OPENAI_API_KEY') or value)
@@ -190,7 +292,25 @@ class SettingsWindow(BaseWindow):
         self.close()
 
     def save_setting(self, widget, category, sub_category, key, meta):
-        value = self.get_widget_value_typed(widget, meta.get('type'))
+        # Special handling for sound_device - extract device number from dropdown
+        if key == 'sound_device' and isinstance(widget, QComboBox):
+            selected_text = widget.currentText()
+            if selected_text.startswith("Default"):
+                value = None  # Use default device
+            else:
+                # Extract device number from format "X: Device Name"
+                try:
+                    if ":" in selected_text and not selected_text.startswith("Custom"):
+                        device_num = int(selected_text.split(":")[0])
+                        value = device_num
+                    else:
+                        # Fallback for custom entries
+                        value = 1
+                except (ValueError, IndexError):
+                    value = 1  # Default fallback
+        else:
+            value = self.get_widget_value_typed(widget, meta.get('type'))
+            
         if sub_category:
             ConfigManager.set_config_value(value, category, sub_category, key)
         else:
