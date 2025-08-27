@@ -1,0 +1,1547 @@
+[1mdiff --git a/.cursorindexingignore b/.cursorindexingignore[m
+[1mindex 953908e..4ecfc0b 100644[m
+[1m--- a/.cursorindexingignore[m
+[1m+++ b/.cursorindexingignore[m
+[36m@@ -1,3 +1,3 @@[m
+[31m-[m
+[31m-# Don't index SpecStory auto-save files, but allow explicit context inclusion via @ references[m
+[31m-.specstory/**[m
+[32m+[m[41m[m
+[32m+[m[32m# Don't index SpecStory auto-save files, but allow explicit context inclusion via @ references[m[41m[m
+[32m+[m[32m.specstory/**[m[41m[m
+[1mdiff --git a/.github/ISSUE_TEMPLATE/bug_report.md b/.github/ISSUE_TEMPLATE/bug_report.md[m
+[1mindex c99bc9b..44fd870 100644[m
+[1m--- a/.github/ISSUE_TEMPLATE/bug_report.md[m
+[1m+++ b/.github/ISSUE_TEMPLATE/bug_report.md[m
+[36m@@ -1,47 +1,47 @@[m
+[31m----[m
+[31m-name: Bug Report[m
+[31m-about: Create a report to help us improve Parakeet-Writer[m
+[31m-title: "[BUG] "[m
+[31m-labels: bug[m
+[31m-assignees: ''[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-**Describe the bug**[m
+[31m-A clear and concise description of what the bug is.[m
+[31m-[m
+[31m-**To Reproduce**[m
+[31m-Steps to reproduce the behavior:[m
+[31m-1. Go to '...'[m
+[31m-2. Click on '....'[m
+[31m-3. Scroll down to '....'[m
+[31m-4. See error[m
+[31m-[m
+[31m-**Expected behavior**[m
+[31m-A clear and concise description of what you expected to happen.[m
+[31m-[m
+[31m-**Screenshots**[m
+[31m-If applicable, add screenshots to help explain your problem.[m
+[31m-[m
+[31m-**System Information:**[m
+[31m- - OS: [e.g. Windows 11][m
+[31m- - Python Version: [e.g. 3.9.7][m
+[31m- - GPU: [e.g. NVIDIA RTX 3080 or CPU only][m
+[31m- - Installation method: [Desktop app or Web interface][m
+[31m-[m
+[31m-**Configuration Settings (if relevant):**[m
+[31m-- Recording mode: [e.g. Continuous, Push-to-talk][m
+[31m-- Audio device: [e.g. Default microphone][m
+[31m-- Any custom settings modified: [list safe settings you changed][m
+[31m-[m
+[31m-**Error Messages**[m
+[31m-If you see any error messages, please paste them here:[m
+[31m-```[m
+[31m-[Paste error messages here][m
+[31m-```[m
+[31m-[m
+[31m-**Log Files**[m
+[31m-If available, please attach any log files or console output.[m
+[31m-[m
+[31m-**Additional context**[m
+[32m+[m[32m---[m[41m[m
+[32m+[m[32mname: Bug Report[m[41m[m
+[32m+[m[32mabout: Create a report to help us improve Parakeet-Writer[m[41m[m
+[32m+[m[32mtitle: "[BUG] "[m[41m[m
+[32m+[m[32mlabels: bug[m[41m[m
+[32m+[m[32massignees: ''[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m---[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Describe the bug**[m[41m[m
+[32m+[m[32mA clear and concise description of what the bug is.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**To Reproduce**[m[41m[m
+[32m+[m[32mSteps to reproduce the behavior:[m[41m[m
+[32m+[m[32m1. Go to '...'[m[41m[m
+[32m+[m[32m2. Click on '....'[m[41m[m
+[32m+[m[32m3. Scroll down to '....'[m[41m[m
+[32m+[m[32m4. See error[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Expected behavior**[m[41m[m
+[32m+[m[32mA clear and concise description of what you expected to happen.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Screenshots**[m[41m[m
+[32m+[m[32mIf applicable, add screenshots to help explain your problem.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**System Information:**[m[41m[m
+[32m+[m[32m - OS: [e.g. Windows 11][m[41m[m
+[32m+[m[32m - Python Version: [e.g. 3.9.7][m[41m[m
+[32m+[m[32m - GPU: [e.g. NVIDIA RTX 3080 or CPU only][m[41m[m
+[32m+[m[32m - Installation method: [Desktop app or Web interface][m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Configuration Settings (if relevant):**[m[41m[m
+[32m+[m[32m- Recording mode: [e.g. Continuous, Push-to-talk][m[41m[m
+[32m+[m[32m- Audio device: [e.g. Default microphone][m[41m[m
+[32m+[m[32m- Any custom settings modified: [list safe settings you changed][m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Error Messages**[m[41m[m
+[32m+[m[32mIf you see any error messages, please paste them here:[m[41m[m
+[32m+[m[32m```[m[41m[m
+[32m+[m[32m[Paste error messages here][m[41m[m
+[32m+[m[32m```[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Log Files**[m[41m[m
+[32m+[m[32mIf available, please attach any log files or console output.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Additional context**[m[41m[m
+ Add any other context about the problem here. [m
+\ No newline at end of file[m
+[1mdiff --git a/.github/ISSUE_TEMPLATE/feature_request.md b/.github/ISSUE_TEMPLATE/feature_request.md[m
+[1mindex 213fc7f..3116a8c 100644[m
+[1m--- a/.github/ISSUE_TEMPLATE/feature_request.md[m
+[1m+++ b/.github/ISSUE_TEMPLATE/feature_request.md[m
+[36m@@ -1,26 +1,26 @@[m
+[31m----[m
+[31m-name: Feature Request[m
+[31m-about: Suggest an idea for Parakeet-Writer[m
+[31m-title: "[FEATURE] "[m
+[31m-labels: enhancement[m
+[31m-assignees: ''[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-**Is your feature request related to a problem? Please describe.**[m
+[31m-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...][m
+[31m-[m
+[31m-**Describe the solution you'd like**[m
+[31m-A clear and concise description of what you want to happen.[m
+[31m-[m
+[31m-**Describe alternatives you've considered**[m
+[31m-A clear and concise description of any alternative solutions or features you've considered.[m
+[31m-[m
+[31m-**Use Case**[m
+[31m-Explain how this feature would be used and who would benefit from it.[m
+[31m-[m
+[31m-**Implementation Ideas (optional)**[m
+[31m-If you have ideas about how this could be implemented, share them here.[m
+[31m-[m
+[31m-**Additional context**[m
+[32m+[m[32m---[m[41m[m
+[32m+[m[32mname: Feature Request[m[41m[m
+[32m+[m[32mabout: Suggest an idea for Parakeet-Writer[m[41m[m
+[32m+[m[32mtitle: "[FEATURE] "[m[41m[m
+[32m+[m[32mlabels: enhancement[m[41m[m
+[32m+[m[32massignees: ''[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m---[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Is your feature request related to a problem? Please describe.**[m[41m[m
+[32m+[m[32mA clear and concise description of what the problem is. Ex. I'm always frustrated when [...][m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Describe the solution you'd like**[m[41m[m
+[32m+[m[32mA clear and concise description of what you want to happen.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Describe alternatives you've considered**[m[41m[m
+[32m+[m[32mA clear and concise description of any alternative solutions or features you've considered.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Use Case**[m[41m[m
+[32m+[m[32mExplain how this feature would be used and who would benefit from it.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Implementation Ideas (optional)**[m[41m[m
+[32m+[m[32mIf you have ideas about how this could be implemented, share them here.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Additional context**[m[41m[m
+ Add any other context, screenshots, or examples about the feature request here. [m
+\ No newline at end of file[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 52fb8e5..fcc384c 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,66 +1,70 @@[m
+[31m-# Virtual Environments[m
+[31m-venv_parakeet/[m
+[31m-venv/[m
+[31m-env/[m
+[31m-.env[m
+[31m-[m
+[31m-# Python cache files[m
+[31m-__pycache__/[m
+[31m-*.pyc[m
+[31m-*.pyo[m
+[31m-*.pyd[m
+[31m-.Python[m
+[31m-*.so[m
+[31m-[m
+[31m-# System-specific files with sensitive paths[m
+[31m-temp_audio_path.txt[m
+[31m-*.tmp[m
+[31m-*.temp[m
+[31m-[m
+[31m-# Virtual environment configuration with local paths[m
+[31m-pyvenv.cfg[m
+[31m-[m
+[31m-# Local configuration files that might contain system paths[m
+[31m-config_local.yaml[m
+[31m-config_personal.yaml[m
+[31m-[m
+[31m-# Audio cache and temporary files[m
+[31m-*.wav.tmp[m
+[31m-audio_cache/[m
+[31m-temp_audio/[m
+[31m-[m
+[31m-# Model cache (these can be large and will be downloaded automatically)[m
+[31m-.cache/[m
+[31m-models/[m
+[31m-*.nemo[m
+[31m-*.pt[m
+[31m-*.bin[m
+[31m-[m
+[31m-# Log files[m
+[31m-*.log[m
+[31m-logs/[m
+[31m-[m
+[31m-# IDE and editor files[m
+[31m-.vscode/[m
+[31m-.idea/[m
+[31m-*.swp[m
+[31m-*.swo[m
+[31m-*~[m
+[31m-[m
+[31m-# OS-specific files[m
+[31m-.DS_Store[m
+[31m-Thumbs.db[m
+[31m-desktop.ini[m
+[31m-[m
+[31m-# Windows system files[m
+[31m-*.lnk[m
+[31m-[m
+[31m-# Backup files[m
+[31m-*.bak[m
+[31m-*.backup[m
+[31m-config.yaml.bak[m
+[31m-[m
+[31m-# Personal notes and development files[m
+[31m-NOTES.txt[m
+[31m-TODO.txt[m
+[31m-dev_notes/ [m
+\ No newline at end of file[m
+[32m+[m[32m# Virtual Environments[m[41m[m
+[32m+[m[32mvenv_parakeet/[m[41m[m
+[32m+[m[32mvenv/[m[41m[m
+[32m+[m[32menv/[m[41m[m
+[32m+[m[32m.env[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Python cache files[m[41m[m
+[32m+[m[32m__pycache__/[m[41m[m
+[32m+[m[32m*.pyc[m[41m[m
+[32m+[m[32m*.pyo[m[41m[m
+[32m+[m[32m*.pyd[m[41m[m
+[32m+[m[32m.Python[m[41m[m
+[32m+[m[32m*.so[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# System-specific files with sensitive paths[m[41m[m
+[32m+[m[32mtemp_audio_path.txt[m[41m[m
+[32m+[m[32m*.tmp[m[41m[m
+[32m+[m[32m*.temp[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Virtual environment configuration with local paths[m[41m[m
+[32m+[m[32mpyvenv.cfg[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Local configuration files that might contain system paths[m[41m[m
+[32m+[m[32mconfig_local.yaml[m[41m[m
+[32m+[m[32mconfig_personal.yaml[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Audio cache and temporary files[m[41m[m
+[32m+[m[32m*.wav.tmp[m[41m[m
+[32m+[m[32maudio_cache/[m[41m[m
+[32m+[m[32mtemp_audio/[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Model cache (these can be large and will be downloaded automatically)[m[41m[m
+[32m+[m[32m.cache/[m[41m[m
+[32m+[m[32mmodels/[m[41m[m
+[32m+[m[32m*.nemo[m[41m[m
+[32m+[m[32m*.pt[m[41m[m
+[32m+[m[32m*.bin[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Log files[m[41m[m
+[32m+[m[32m*.log[m[41m[m
+[32m+[m[32mlogs/[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# IDE and editor files[m[41m[m
+[32m+[m[32m.vscode/[m[41m[m
+[32m+[m[32m.idea/[m[41m[m
+[32m+[m[32m*.swp[m[41m[m
+[32m+[m[32m*.swo[m[41m[m
+[32m+[m[32m*~[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# OS-specific files[m[41m[m
+[32m+[m[32m.DS_Store[m[41m[m
+[32m+[m[32mThumbs.db[m[41m[m
+[32m+[m[32mdesktop.ini[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Windows system files[m[41m[m
+[32m+[m[32m*.lnk[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Backup files[m[41m[m
+[32m+[m[32m*.bak[m[41m[m
+[32m+[m[32m*.backup[m[41m[m
+[32m+[m[32mconfig.yaml.bak[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Personal notes and development files[m[41m[m
+[32m+[m[32mNOTES.txt[m[41m[m
+[32m+[m[32mTODO.txt[m[41m[m
+[32m+[m[32mdev_notes/[m[41m [m
+[32m+[m[32mwhisper-writer-parakeet/config.yaml[m[41m[m
+[32m+[m[32mconfig.yaml[m[41m[m
+[32m+[m[32mwhisper-writer-parakeet/config_parakeet.yaml[m[41m[m
+[32m+[m[32mwhisper-writer-parakeet/config.yaml[m[41m[m
+[1mdiff --git a/.specstory/.gitignore b/.specstory/.gitignore[m
+[1mindex 53b537f..59f74e5 100644[m
+[1m--- a/.specstory/.gitignore[m
+[1m+++ b/.specstory/.gitignore[m
+[36m@@ -1,2 +1,2 @@[m
+[31m-# SpecStory explanation file[m
+[31m-/.what-is-this.md[m
+[32m+[m[32m# SpecStory explanation file[m[41m[m
+[32m+[m[32m/.what-is-this.md[m[41m[m
+[1mdiff --git a/.specstory/history/2025-06-11_02-38-clone-github-repo-and-set-up.md b/.specstory/history/2025-06-11_02-38-clone-github-repo-and-set-up.md[m
+[1mindex a8c4493..b149dcb 100644[m
+[1m--- a/.specstory/history/2025-06-11_02-38-clone-github-repo-and-set-up.md[m
+[1m+++ b/.specstory/history/2025-06-11_02-38-clone-github-repo-and-set-up.md[m
+[36m@@ -1,4034 +1,4034 @@[m
+[31m-<!-- Generated by SpecStory -->[m
+[31m-[m
+[31m-# Clone GitHub repo and set up (2025-06-10 22:38:18)[m
+[31m-[m
+[31m-_**User**_[m
+[31m-[m
+[31m-i want to clone a github repo and get the program in it working on this pc[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**Assistant**_[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-I'd be happy to help you clone a GitHub repository and get it working on your PC! [m
+[31m-[m
+[31m-To get started, I need to know which repository you want to clone. Could you please provide:[m
+[31m-[m
+[31m-1. The GitHub repository URL (e.g., `https://github.com/username/repository-name`) or just the username/repository-name[m
+[31m-2. Any specific branch you want to clone (if not the default main/master branch)[m
+[31m-[m
+[31m-Once you provide this information, I can help you:[m
+[31m-- Clone the repository using git[m
+[31m-- Identify what type of project it is[m
+[31m-- Install any necessary dependencies[m
+[31m-- Get the program running on your Windows PC[m
+[31m-[m
+[31m-What repository would you like to clone?[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**User**_[m
+[31m-[m
+[31m-@https://github.com/warnedoc/parakeet-writer [m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**Assistant**_[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! I can help you clone and set up the [Parakeet-Writer](https://github.com/warnedoc/parakeet-writer) repository. This is a speech-to-text transcription tool that uses NVIDIA NeMo's Parakeet ASR model instead of OpenAI Whisper.[m
+[31m-[m
+[31m-Let me start by cloning the repository and then guide you through the setup process:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-git clone https://github.com/warnedoc/parakeet-writer.git[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> git clone https://github.com/warnedoc/parakeet-writer.git[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Now let's navigate to the cloned directory and explore its structure:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd parakeet-writer && dir[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> cd parakeet-writer && dir[m
+[31m-At line:1 char:20[m
+[31m-+ cd parakeet-writer && dir[m
+[31m-+                    ~~[m
+[31m-The token '&&' is not a valid statement separator in this version.[m
+[31m-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException[m
+[31m-    + FullyQualifiedErrorId : InvalidEndOfLine[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me fix that PowerShell syntax:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd parakeet-writer[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-cd : Cannot find path 'C:\Users\brian\parakeet-writer' because it does not exist.[m
+[31m-At line:1 char:1[m
+[31m-+ cd parakeet-writer[m
+[31m-+ ~~~~~~~~~~~~~~~~~~[m
+[31m-    + CategoryInfo          : ObjectNotFound: (C:\Users\brian\parakeet-writer:String) [Set-Location], I  [m
+[31m-   temNotFoundException[m
+[31m-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me check what's in the current directory first:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-dir[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-[m
+[31m-[m
+[31m-    Directory: C:\Users\brian[m
+[31m-[m
+[31m-[m
+[31m-Mode                 LastWriteTime         Length Name[m
+[31m-----                 -------------         ------ ----[m
+[31m-d-----         9/13/2021   2:46 PM                .cisco[m
+[31m-d-----         4/28/2025  11:17 AM                .cursor[m
+[31m-d-----        10/23/2024   4:00 PM                .cursor-tutor[m
+[31m-d-----        10/23/2024   4:00 PM                .cursor-tutor-1[m
+[31m-d-----        10/23/2024   4:06 PM                .dotnet[m
+[31m-d-----        10/23/2024   4:15 PM                .templateengine[m
+[31m-d-r---         9/12/2021  11:58 PM                3D Objects[m
+[31m-d-----          5/3/2024  12:15 AM                ansel[m
+[31m-d-r---         3/11/2025   4:24 PM                Contacts[m
+[31m-d-r---          6/6/2025   7:10 PM                Desktop[m
+[31m-d-r---          6/1/2025  10:12 PM                Documents[m
+[31m-d-r---         6/10/2025   4:11 AM                Downloads[m
+[31m-d-r---          6/2/2025   6:49 AM                Videos[m
+[31m-[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-It seems the git clone command may not have completed successfully. Let me try cloning again and check if git is available:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-git --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> git --version[m
+[31m-git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable [m
+[31m-program. Check the spelling of the name, or if a path was included, verify that the path is correct and [m
+[31m-try again.[m
+[31m-At line:1 char:1[m
+[31m-+ git --version[m
+[31m-+ ~~~[m
+[31m-    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException[m
+[31m-    + FullyQualifiedErrorId : CommandNotFoundException[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-I see that Git is not installed on your system. Let me help you install Git first, then clone the repository. We have a few options:[m
+[31m-[m
+[31m-1. **Install Git for Windows** (recommended)[m
+[31m-2. **Download the repository as a ZIP file**[m
+[31m-[m
+[31m-Let me show you both options. First, let's try downloading the repository as a ZIP file, which doesn't require Git:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads/master.zip" -OutFile "parakeet-writer.zip"[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-/master.zip[m
+[31m-Oops, something went wrong.  Please report this bug with the details below.[m
+[31m-Report on GitHub: https://github.com/PowerShell/PSReadLine/issues/new[m
+[31m-### Environment[m
+[31m-PSReadLine: 2.0.0[m
+[31m-PowerShell: 5.1.26100.4061[m
+[31m-OS: Microsoft Windows 10.0.26100[m
+[31m-Last 200 Keys[m
+[31m-```[m
+[31m- a k e e t - w r i t e r . g i t Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- c d Spacebar p a r a k e e t - w r i t e r Spacebar & & Spacebar d i r Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- c d Spacebar p a r a k e e t - w r i t e r Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- d i r Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- g i t Spacebar - - v e r s i o n Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- I n v o k e - W e b R e q u e s t Spacebar - U r i Spacebar " h t t p s : / / g i t h u b . c o m / w a [m
+[31m-r n e d o c / p a r a k e e t - w r i t e r / a r c h i v e / r e f s / h e a d s / m a s t e r . z i p "[m
+[31m- Spacebar -[m
+[31m-```[m
+[31m-[m
+[31m-### Exception[m
+[31m-```[m
+[31m-System.ArgumentOutOfRangeException: The value must be greater than or equal to zero and less than the con[m
+[31m-sole's buffer size in that dimension.[m
+[31m-Parameter name: top[m
+[31m-Actual value was 11.[m
+[31m-   at System.Console.SetCursorPosition(Int32 left, Int32 top)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ReallyRender(RenderData renderData, String defaultColor)    [m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ForceRender()[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.Insert(Char c)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.SelfInsert(Nullable`1 key, Object arg)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ProcessOneKey(PSKeyInfo key, Dictionary`2 dispatchTable, Boo[m
+[31m-lean ignoreIfNoAction, Object arg)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.InputLoop()[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ReadLine(Runspace runspace, EngineIntrinsics engineIntrinsic[m
+[31m-s, CancellationToken cancellationToken)[m
+[31m-```[m
+[31m-[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-PS C:\Users\brian> Invoke-WebRequest -Uri "https://github.com/warnedoc/parakeet-writer/archive/refs/heads[m
+[31m-/master.zip" -OutFile "parakeet-writer.zip"[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me check if the download was successful:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-dir *.zip[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-[m
+[31m-[m
+[31m-    Directory: C:\Users\brian[m
+[31m-[m
+[31m-[m
+[31m-Mode                 LastWriteTime         Length Name[m
+[31m-----                 -------------         ------ ----[m
+[31m--a----         6/10/2025  11:00 PM         291031 parakeet-writer.zip[m
+[31m-[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! The download was successful. Now let's extract the ZIP file:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-Expand-Archive -Path "parakeet-writer.zip" -DestinationPath "." -Force[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> Expand-Archive -Path "parakeet-writer.zip" -DestinationPath "." -Force[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Now let's see what was extracted:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-dir[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-Mode                 LastWriteTime         Length Name[m
+[31m-----                 -------------         ------ ----[m
+[31m-d-----         9/13/2021   2:46 PM                .cisco[m
+[31m-d-----         4/28/2025  11:17 AM                .cursor[m
+[31m-d-----        10/23/2024   4:00 PM                .cursor-tutor[m
+[31m-d-----        10/23/2024   4:00 PM                .cursor-tutor-1[m
+[31m-d-----        10/23/2024   4:06 PM                .dotnet[m
+[31m-d-----        10/23/2024   4:15 PM                .templateengine[m
+[31m-d-r---         9/12/2021  11:58 PM                3D Objects[m
+[31m-d-----          5/3/2024  12:15 AM                ansel[m
+[31m-d-r---         3/11/2025   4:24 PM                Contacts[m
+[31m-d-r---          6/6/2025   7:10 PM                Desktop[m
+[31m-d-r---          6/1/2025  10:12 PM                Documents[m
+[31m-d-r---         6/10/2025   4:11 AM                Downloads[m
+[31m-d-r---         3/11/2025   4:24 PM                Favorites[m
+[31m-d-r---         3/11/2025   4:24 PM                Links[m
+[31m-d-----         3/19/2022   3:29 PM                Microsoft[m
+[31m-d-r---         3/11/2025   4:24 PM                Music[m
+[31m-dar--l         3/13/2022   5:46 PM                OneDrive[m
+[31m-d-----         6/10/2025  11:00 PM                Parakeet-Writer-master[m
+[31m-d-r---         4/27/2025   8:46 PM                Pictures[m
+[31m-d-r---         4/27/2025  11:53 PM                Saved Games[m
+[31m-d-----         3/14/2025  12:03 PM                school-dashboard[m
+[31m-d-r---         3/11/2025   4:24 PM                Searches[m
+[31m-d-r---          6/2/2025   6:49 AM                Videos[m
+[31m--a----         6/10/2025  11:00 PM         291031 parakeet-writer.zip[m
+[31m-[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! The project was extracted as `Parakeet-Writer-master`. Let's navigate to it and explore the structure:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd Parakeet-Writer-master[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**User**_[m
+[31m-[m
+[31m- why does this keep showing[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**Assistant**_[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-The error you're seeing with `q : The term 'q' is not recognized as the name of a cmdlet` is happening because of an issue with PSReadLine (PowerShell's command line editing module). This occurred after we encountered a console buffer error earlier.[m
+[31m-[m
+[31m-This happens when:[m
+[31m-1. PSReadLine gets confused about the console state[m
+[31m-2. Single keystrokes are being interpreted as complete commands instead of input[m
+[31m-3. The console buffer size error corrupted the input handling[m
+[31m-[m
+[31m-Here are a few solutions to fix this:[m
+[31m-[m
+[31m-**Option 1: Restart PowerShell (Recommended)**[m
+[31m-Close your current PowerShell window and open a new one. This will reset the PSReadLine state.[m
+[31m-[m
+[31m-**Option 2: Try using Command Prompt instead**[m
+[31m-Open Command Prompt (cmd) instead of PowerShell to avoid PSReadLine issues entirely.[m
+[31m-[m
+[31m-**Option 3: Disable PSReadLine temporarily**[m
+[31m-If you want to continue in the current session, try:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-Remove-Module PSReadLine[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> Remove-Module PSReadLine[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Good! That should fix the keystroke issue. Now let's continue with setting up Parakeet-Writer. Let's navigate to the project directory:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd Parakeet-Writer-master[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> cd Parakeet-Writer-master[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me correct that - we're now in the Parakeet-Writer-master directory. Let's explore what's in the project:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-dir[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> dir[m
+[31m-----                 -------------         ------ ----[m
+[31m-d-----         6/10/2025  11:00 PM                .github[m
+[31m-d-----         6/10/2025  11:00 PM                whisper-writer-parakeet[m
+[31m--a----         5/30/2025   9:15 AM            821 .gitignore[m
+[31m--a----         5/30/2025   9:15 AM           3750 CONTRIBUTING.md[m
+[31m--a----         5/30/2025   9:15 AM          35102 LICENSE[m
+[31m--a----         5/30/2025   9:15 AM           7139 LICENSES.txt[m
+[31m--a----         5/30/2025   9:15 AM            126 parakeet_ui.py[m
+[31m--a----         5/30/2025   9:15 AM           1184 parakeet_web.py[m
+[31m--a----         5/30/2025   9:15 AM             62 parakeet_web_ui.py[m
+[31m--a----         5/30/2025   9:15 AM           5117 PARAKEET_WHISPERWRITER_GUIDE.md[m
+[31m--a----         5/30/2025   9:15 AM           9306 README.md[m
+[31m--a----         5/30/2025   9:15 AM           1034 run_gradio.py[m
+[31m--a----         5/30/2025   9:15 AM           6682 run_whisperwriter_parakeet.py[m
+[31m--a----         5/30/2025   9:15 AM         237964 sample_audio.wav[m
+[31m-[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! Now I can see the PSReadLine issue is resolved and we can properly explore the project. Let's check if Python is installed on your system:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> python --version[m
+[31m-Python 3.13.2[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Excellent! You have Python 3.13.2 installed, which meets the requirements (Python 3.8+). Now let's follow the installation guide step by step. According to the repository documentation, we need to:[m
+[31m-[m
+[31m-1. Create a virtual environment[m
+[31m-2. Install PyTorch with GPU support[m
+[31m-3. Install the required dependencies[m
+[31m-[m
+[31m-Let's start by creating a virtual environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python -m venv venv_parakeet[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> python -m venv venv_parakeet[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Now let's activate the virtual environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-venv_parakeet\Scripts\activate[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> venv_parakeet\Scripts\activate[m
+[31m-[m
+[31m-Do you want to run software from this untrusted publisher?[m
+[31m-File C:\Users\brian\Parakeet-Writer-master\venv_parakeet\Scripts\Activate.ps1 is published by CN=Python  [m
+[31m-your system. Only run scripts from trusted publishers.[m
+[31m-[V] Never run  [D] Do not run  [R] Run once  [A] Always run  [?] Help (default is "D"):[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-I see that PowerShell is asking for permission to run the activation script. You'll need to choose an option from the prompt. You can either:[m
+[31m-[m
+[31m-- Press **R** for "Run once" to run it this time only[m
+[31m-- Press **A** for "Always run" to trust Python scripts permanently  [m
+[31m-- Press **D** for "Do not run" to cancel[m
+[31m-[m
+[31m-Since this is a legitimate Python virtual environment script, I recommend pressing **R** (Run once) or **A** (Always run). [m
+[31m-[m
+[31m-Alternatively, we can work around this by using a different method. Let me try activating the environment using the batch file instead:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me try using Command Prompt instead, which typically doesn't have the execution policy restrictions:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cmd /c "venv_parakeet\Scripts\activate.bat && python --version"[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-Python 3.13.2[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Good! The virtual environment is working. Now let's start a proper Command Prompt session to avoid PowerShell execution policy issues:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cmd[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> cmd[m
+[31m-Microsoft Windows [Version 10.0.26100.4061][m
+[31m-(c) Microsoft Corporation. All rights reserved.[m
+[31m-[m
+[31m-C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! Now we're in Command Prompt. Let's navigate to the project directory and activate the virtual environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd C:\Users\brian\Parakeet-Writer-master && venv_parakeet\Scripts\activate[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-C:\Users\brian\Parakeet-Writer-master>cd C:\Users\brian\Parakeet-Writer-master && venv_parakeet\Scripts\a[m
+[31m-ctivate[m
+[31m-(venv_parakeet) C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Excellent! I can see that the virtual environment is now activated (notice the `(venv_parakeet)` prefix). Now let's continue with the installation process. According to the documentation, we need to install PyTorch first. Let me continue in the activated environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd C:\Users\brian\Parakeet-Writer-master && venv_parakeet\Scripts\activate && python --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> cd C:\Users\brian\Parakeet-Writer-master && venv_parakeet\Scripts\activate && python -[m
+[31m--version[m
+[31m-At line:1 char:42[m
+[31m-+                                                                ~~[m
+[31m-The token '&&' is not a valid statement separator in this version.[m
+[31m-    + FullyQualifiedErrorId : InvalidEndOfLine[m
+[31m-[m
+[31m-PS C:\Users\brian>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me use the proper PowerShell syntax:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian> cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Now let's activate the virtual environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-.\venv_parakeet\Scripts\Activate.ps1[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-PS C:\Users\brian\Parakeet-Writer-master> .\venv_parakeet\Scripts\Activate.ps1[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! The virtual environment is now activated (see the `(venv_parakeet)` prefix). Now let's install PyTorch. According to the documentation, we should install the GPU version if you have an NVIDIA GPU. Let's install PyTorch with CUDA support:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> pip install torch torchaudio --index-url https:[m
+[31m-//download.pytorch.org/whl/cu1[m
+[31m-Oops, something went wrong.  Please report this bug with the details below.[m
+[31m-Report on GitHub: https://github.com/PowerShell/PSReadLine/issues/new[m
+[31m-### Environment[m
+[31m-PSReadLine: 2.0.0[m
+[31m-PowerShell: 5.1.26100.4061[m
+[31m-OS: Microsoft Windows 10.0.26100[m
+[31m-Last 200 Keys[m
+[31m-```[m
+[31m- \ a c t i v a t e Spacebar & & Spacebar p y t h o n Spacebar - - v e r s i o n Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- c d Spacebar C : \ U s e r s \ b r i a n \ P a r a k e e t - W r i t e r - m a s t e r Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- . \ v e n v _ p a r a k e e t \ S c r i p t s \ A c t i v a t e . p s 1 Enter[m
+[31m- q Ctrl+d Ctrl+Alt+c Enter[m
+[31m- p i p Spacebar i n s t a l l Spacebar t o r c h Spacebar t o r c h a u d i o Spacebar - - i n d e x - u [m
+[31m-r l Spacebar h t t p s : / / d o w n l o a d . p y t o r c h . o r g / w h l / c u 1 2 1 Enter[m
+[31m-[m
+[31m-```[m
+[31m-[m
+[31m-### Exception[m
+[31m-```[m
+[31m-System.ArgumentOutOfRangeException: The value must be greater than or equal to zero and less than the con[m
+[31m-sole's buffer size in that dimension.[m
+[31m-Parameter name: top[m
+[31m-Actual value was 3.[m
+[31m-   at System.Console.SetCursorPosition(Int32 left, Int32 top)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ReallyRender(RenderData renderData, String defaultColor)    [m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ForceRender()[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.Insert(Char c)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.SelfInsert(Nullable`1 key, Object arg)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ProcessOneKey(PSKeyInfo key, Dictionary`2 dispatchTable, Boo[m
+[31m-lean ignoreIfNoAction, Object arg)[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.InputLoop()[m
+[31m-   at Microsoft.PowerShell.PSConsoleReadLine.ReadLine(Runspace runspace, EngineIntrinsics engineIntrinsic[m
+[31m-s, CancellationToken cancellationToken)[m
+[31m-```[m
+[31m-[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> pip install torch torchaudio --index-url https:[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> pip install torch torchaudio --index-url https:[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> pip install torch torchaudio --index-url https:[m
+[31m-//download.pytorch.org/whl/cu121[m
+[31m-Looking in indexes: https://download.pytorch.org/whl/cu121[m
+[31m-ERROR: Could not find a version that satisfies the requirement torch (from versions: none)[m
+[31m-ERROR: No matching distribution found for torch[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-I see we're encountering the PSReadLine issue again, and also there's an issue with the PyTorch installation. The error suggests that PyTorch with CUDA 12.1 might not be compatible with Python 3.13.2. Let's try installing the CPU version first or a more compatible version. Let me disable PSReadLine again and try the installation:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-Remove-Module PSReadLine[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**User**_[m
+[31m-[m
+[31m-please just install a compatible versioln of python instead[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-_**Assistant**_[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-You're absolutely right! Python 3.13.2 is very new and PyTorch doesn't have full compatibility yet. Let's install a more compatible Python version. Python 3.11 is a great choice as it has excellent PyTorch compatibility.[m
+[31m-[m
+[31m-Let me help you install Python 3.11:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-winget install Python.Python.3.11[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> winget install Python.Python.3.11[m
+[31m-The `msstore` source requires that you view the following agreements before using.[m
+[31m-Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction                               o[m
+[31m- function properly (ex. "US").t machine's 2-letter geographic region to be sent to the backend service to[m
+[31m-Do you agree to all the source agreements terms?[m
+[31m-[Y] Yes  [N] No: y[m
+[31m-Found Python 3.11 [Python.Python.3.11] Version 3.11.9[m
+[31m-This application is licensed to you by its owner.[m
+[31m-Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.[m
+[31m-Downloading https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe[m
+[31m-  ██████████████████████████████  25.0 MB / 25.0 MB[m
+[31m-Successfully verified installer hash[m
+[31m-Starting package install...[m
+[31m-Successfully installed[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Python 3.11.9 has been installed successfully. Now let's verify it's available and then create a new virtual environment with this compatible version:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python3.11 --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> python3.11 --version[m
+[31m-python3.11 : The term 'python3.11' is not recognized as the name of a cmdlet, function, script file, or [m
+[31m-operable program. Check the spelling of the name, or if a path was included, verify that the path is [m
+[31m-correct and try again.[m
+[31m-At line:1 char:1[m
+[31m-+ python3.11 --version[m
+[31m-+ ~~~~~~~~~~[m
+[31m-    + CategoryInfo          : ObjectNotFound: (python3.11:String) [], CommandNotFoundException[m
+[31m-    + FullyQualifiedErrorId : CommandNotFoundException[m
+[31m-[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-The Python 3.11 installation might not be in the PATH yet. Let me try a different approach. Let's check if we can find where it was installed:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-py -3.11 --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> py -3.11 --version[m
+[31m-Python 3.11.9[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! Python 3.11.9 is available through the Python Launcher (`py -3.11`). Now let's create a new virtual environment using Python 3.11. Let's first go back to the project directory and create a new virtual environment:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> cd C:\Users\brian\Parakeet-Writer-master[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Now let's create a new virtual environment with Python 3.11:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-py -3.11 -m venv venv_parakeet_py311[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> py -3.11 -m venv venv_parakeet_py311[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Now let's activate the new virtual environment with Python 3.11:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-.\venv_parakeet_py311\Scripts\Activate.ps1[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet) PS C:\Users\brian\Parakeet-Writer-master> .\venv_parakeet_py311\Scripts\Activate.ps1[m
+[31m-[m
+[31m-Do you want to run software from this untrusted publisher?[m
+[31m-File C:\Users\brian\Parakeet-Writer-master\venv_parakeet_py311\Scripts\Activate.ps1 is published by      [m
+[31m-trusted on your system. Only run scripts from trusted publishers.[m
+[31m-[V] Never run  [D] Do not run  [R] Run once  [A] Always run  [?] Help (default is "D"): a [m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Excellent! You chose "Always run" which will prevent this prompt in the future. Notice we now have `(venv_parakeet_py311)` showing that we're in the Python 3.11 virtual environment. Let's verify the Python version:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> python --version[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-The command didn't show output. Let me try again and also upgrade pip first:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python --version && pip --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> python --version && pip --version[m
+[31m-At line:1 char:18[m
+[31m-+ python --version && pip --version[m
+[31m-+                  ~~[m
+[31m-The token '&&' is not a valid statement separator in this version.[m
+[31m-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException[m
+[31m-    + FullyQualifiedErrorId : InvalidEndOfLine[m
+[31m- [m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me use proper PowerShell syntax:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python --version[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> python --version[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Let me try a different approach. Let's try running a Python command to see if it's working:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python -c "import sys; print(sys.version)"[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> python -c "import sys; print(sys.version)[m
+[31m-"[m
+[31m-3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)][m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Perfect! We're now using Python 3.11.9 in our virtual environment. Now let's upgrade pip and install PyTorch:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-python -m pip install --upgrade pip[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> python -m pip install --upgrade pip[m
+[31m-Requirement already satisfied: pip in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib\site-[m
+[31m-packages (24.0)[m
+[31m-  Downloading pip-25.1.1-py3-none-any.whl.metadata (3.6 kB)[m
+[31m-Downloading pip-25.1.1-py3-none-any.whl (1.8 MB)[m
+[31m-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 4.6 MB/s eta 0:00:00[m
+[31m-Installing collected packages: pip[m
+[31m-  Attempting uninstall: pip[m
+[31m-    Found existing installation: pip 24.0[m
+[31m-    Uninstalling pip-24.0:[m
+[31m-      Successfully uninstalled pip-24.0[m
+[31m-Successfully installed pip-25.1.1[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Now let's install PyTorch. With Python 3.11, we should have better compatibility. Let's try installing PyTorch with CUDA support:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> pip install torch torchaudio --index-url [m
+[31m-https://d                                                       pip install torch torchaudio --index-url [m
+[31m-https://download.pytorch.org/whl/cu121[m
+[31m-Looking in indexes: https://download.pytorch.org/whl/cu121[m
+[31m-Collecting torch[m
+[31m-  Downloading https://download.pytorch.org/whl/cu121/torch-2.5.1%2Bcu121-cp311-cp311-win_amd64.whl (2449.[m
+[31m-4 MB)[m
+[31m-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 GB 30.2 MB/s eta 0:00:00[m
+[31m-Collecting torchaudio[m
+[31m-  Downloading https://download.pytorch.org/whl/cu121/torchaudio-2.5.1%2Bcu121-cp311-cp311-win_amd64.whl ([m
+[31m-4.1 MB)[m
+[31m-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 49.7 MB/s eta 0:00:00[m
+[31m-Collecting filelock (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl.metadata (2.8 kB)        [m
+[31m-Collecting typing-extensions>=4.8.0 (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB[m
+[31m-)[m
+[31m-Collecting networkx (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl.metadata (5.1 kB)[m
+[31m-Collecting jinja2 (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)[m
+[31m-Collecting fsspec (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl.metadata (11 kB)[m
+[31m-Collecting sympy==1.13.1 (from torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/sympy-1.13.1-py3-none-any.whl (6.2 MB)[m
+[31m-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 54.4 MB/s eta 0:00:00[m
+[31m-Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)[m
+[31m-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 18.3 MB/s eta 0:00:00[m
+[31m-Collecting MarkupSafe>=2.0 (from jinja2->torch)[m
+[31m-  Downloading https://download.pytorch.org/whl/MarkupSafe-2.1.5-cp311-cp311-win_amd64.whl (17 kB)[m
+[31m-Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl (37 kB)[m
+[31m-Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl (11 kB)[m
+[31m-Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl (177 kB)[m
+[31m-Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl (133 kB)[m
+[31m-Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl (1.7 MB)[m
+[31m-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 30.6 MB/s eta 0:00:00[m
+[31m-Installing collected packages: mpmath, typing-extensions, sympy, networkx, MarkupSafe, fsspec, filelock, [m
+[31m-jinja2, torch, torchaudio[m
+[31m-Successfully installed MarkupSafe-2.1.5 filelock-3.13.1 fsspec-2024.6.1 jinja2-3.1.4 mpmath-1.3.0 network[m
+[31m-x-3.3 sympy-1.13.1 torch-2.5.1+cu121 torchaudio-2.5.1+cu121 typing-extensions-4.12.2[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Excellent! PyTorch has been successfully installed. Now let's continue with the other core dependencies. According to the documentation, we need to install these in order:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-pip install omegaconf hydra-core[m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> pip install omegaconf hydra-core[m
+[31m-Collecting omegaconf[m
+[31m-Collecting hydra-core[m
+[31m-  Downloading hydra_core-1.3.2-py3-none-any.whl.metadata (5.5 kB)[m
+[31m-Collecting antlr4-python3-runtime==4.9.* (from omegaconf)[m
+[31m-  Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting PyYAML>=5.1.0 (from omegaconf)[m
+[31m-  Downloading PyYAML-6.0.2-cp311-cp311-win_amd64.whl.metadata (2.1 kB)[m
+[31m-Collecting packaging (from hydra-core)[m
+[31m-  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)[m
+[31m-Downloading omegaconf-2.3.0-py3-none-any.whl (79 kB)[m
+[31m-Downloading hydra_core-1.3.2-py3-none-any.whl (154 kB)[m
+[31m-Downloading PyYAML-6.0.2-cp311-cp311-win_amd64.whl (161 kB)[m
+[31m-Downloading packaging-25.0-py3-none-any.whl (66 kB)[m
+[31m-Building wheels for collected packages: antlr4-python3-runtime[m
+[31m-  Building wheel for antlr4-python3-runtime (pyproject.toml) ... done[m
+[31m-  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=1[m
+[31m-44615 sha256=7723be9779a29b7c9cbd0a6e29fb98127777a71e9daab793c1494a98b97a2221[m
+[31m-  Stored in directory: c:\users\brian\appdata\local\pip\cache\wheels\1a\97\32\461f837398029ad76911109f070[m
+[31m-47fde1d7b661a147c7c56d1[m
+[31m-Successfully built antlr4-python3-runtime[m
+[31m-Installing collected packages: antlr4-python3-runtime, PyYAML, packaging, omegaconf, hydra-core[m
+[31m-Successfully installed PyYAML-6.0.2 antlr4-python3-runtime-4.9.3 hydra-core-1.3.2 omegaconf-2.3.0 packagi[m
+[31m-ng-25.0[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master>[m
+[31m-```[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-Great! Now let's install the NeMo toolkit:[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-```bash[m
+[31m-pip install nemo-toolkit[asr][m
+[31m-```[m
+[31m-[m
+[31m-```[m
+[31m-(venv_parakeet_py311) PS C:\Users\brian\Parakeet-Writer-master> pip install nemo-toolkit[asr][m
+[31m-Collecting nemo-toolkit[asr][m
+[31m-  Downloading nemo_toolkit-2.3.1-py3-none-any.whl.metadata (79 kB)[m
+[31m-Collecting fsspec==2024.12.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading fsspec-2024.12.0-py3-none-any.whl.metadata (11 kB)[m
+[31m-Collecting huggingface_hub>=0.24 (from nemo-toolkit[asr])[m
+[31m-  Downloading huggingface_hub-0.32.5-py3-none-any.whl.metadata (14 kB)[m
+[31m-Collecting numba==0.61.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading numba-0.61.0-cp311-cp311-win_amd64.whl.metadata (2.8 kB)[m
+[31m-Collecting numpy<2.0.0,>=1.22 (from nemo-toolkit[asr])[m
+[31m-  Downloading numpy-1.26.4-cp311-cp311-win_amd64.whl.metadata (61 kB)[m
+[31m-Collecting onnx>=1.7.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading onnx-1.18.0-cp311-cp311-win_amd64.whl.metadata (7.0 kB)[m
+[31m-Collecting protobuf==4.24.4 (from nemo-toolkit[asr])[m
+[31m-  Downloading protobuf-4.24.4-cp310-abi3-win_amd64.whl.metadata (540 bytes)[m
+[31m-Collecting python-dateutil (from nemo-toolkit[asr])[m
+[31m-  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)[m
+[31m-Collecting ruamel.yaml (from nemo-toolkit[asr])[m
+[31m-  Downloading ruamel.yaml-0.18.14-py3-none-any.whl.metadata (24 kB)[m
+[31m-Collecting scikit-learn (from nemo-toolkit[asr])[m
+[31m-  Downloading scikit_learn-1.7.0-cp311-cp311-win_amd64.whl.metadata (14 kB)[m
+[31m-Collecting setuptools>=70.0.0 (from nemo-toolkit[asr])[m
+[31m-  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)[m
+[31m-Collecting tensorboard (from nemo-toolkit[asr])[m
+[31m-  Downloading tensorboard-2.19.0-py3-none-any.whl.metadata (1.8 kB)[m
+[31m-Collecting text-unidecode (from nemo-toolkit[asr])[m
+[31m-  Downloading text_unidecode-1.3-py2.py3-none-any.whl.metadata (2.4 kB)[m
+[31m-Requirement already satisfied: torch in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib\sit[m
+[31m-e-packages (from nemo-toolkit[asr]) (2.5.1+cu121)[m
+[31m-Collecting tqdm>=4.41.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)[m
+[31m-Collecting wget (from nemo-toolkit[asr])[m
+[31m-  Downloading wget-3.2.zip (10 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting wrapt (from nemo-toolkit[asr])[m
+[31m-  Downloading wrapt-1.17.2-cp311-cp311-win_amd64.whl.metadata (6.5 kB)[m
+[31m-Collecting braceexpand (from nemo-toolkit[asr])[m
+[31m-  Downloading braceexpand-0.1.7-py2.py3-none-any.whl.metadata (3.0 kB)[m
+[31m-Collecting editdistance (from nemo-toolkit[asr])[m
+[31m-  Downloading editdistance-0.8.1-cp311-cp311-win_amd64.whl.metadata (3.9 kB)[m
+[31m-Collecting einops (from nemo-toolkit[asr])[m
+[31m-  Downloading einops-0.8.1-py3-none-any.whl.metadata (13 kB)[m
+[31m-Collecting g2p_en (from nemo-toolkit[asr])[m
+[31m-  Downloading g2p_en-2.1.0-py3-none-any.whl.metadata (4.5 kB)[m
+[31m-Collecting jiwer (from nemo-toolkit[asr])[m
+[31m-  Downloading jiwer-3.1.0-py3-none-any.whl.metadata (2.6 kB)[m
+[31m-Collecting kaldi-python-io (from nemo-toolkit[asr])[m
+[31m-  Downloading kaldi-python-io-1.2.2.tar.gz (8.8 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting kaldiio (from nemo-toolkit[asr])[m
+[31m-  Downloading kaldiio-2.18.1-py3-none-any.whl.metadata (13 kB)[m
+[31m-Collecting lhotse>=1.26.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading lhotse-1.30.3-py3-none-any.whl.metadata (18 kB)[m
+[31m-Collecting librosa>=0.10.1 (from nemo-toolkit[asr])[m
+[31m-  Downloading librosa-0.11.0-py3-none-any.whl.metadata (8.7 kB)[m
+[31m-Collecting marshmallow (from nemo-toolkit[asr])[m
+[31m-  Downloading marshmallow-4.0.0-py3-none-any.whl.metadata (7.4 kB)[m
+[31m-Collecting optuna (from nemo-toolkit[asr])[m
+[31m-  Downloading optuna-4.3.0-py3-none-any.whl.metadata (17 kB)[m
+[31m-Requirement already satisfied: packaging in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib[m
+[31m-\site-packages (from nemo-toolkit[asr]) (25.0)[m
+[31m-Collecting pyannote.core (from nemo-toolkit[asr])[m
+[31m-  Downloading pyannote.core-5.0.0-py3-none-any.whl.metadata (1.4 kB)[m
+[31m-Collecting pyannote.metrics (from nemo-toolkit[asr])[m
+[31m-  Downloading pyannote.metrics-3.2.1-py3-none-any.whl.metadata (1.3 kB)[m
+[31m-Collecting pydub (from nemo-toolkit[asr])[m
+[31m-  Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)[m
+[31m-Collecting pyloudnorm (from nemo-toolkit[asr])[m
+[31m-  Downloading pyloudnorm-0.1.1-py3-none-any.whl.metadata (5.6 kB)[m
+[31m-Collecting resampy (from nemo-toolkit[asr])[m
+[31m-  Downloading resampy-0.4.3-py3-none-any.whl.metadata (3.0 kB)[m
+[31m-Collecting scipy>=0.14 (from nemo-toolkit[asr])[m
+[31m-  Downloading scipy-1.15.3-cp311-cp311-win_amd64.whl.metadata (60 kB)[m
+[31m-Collecting soundfile (from nemo-toolkit[asr])[m
+[31m-  Downloading soundfile-0.13.1-py2.py3-none-win_amd64.whl.metadata (16 kB)[m
+[31m-Collecting sox<=1.5.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading sox-1.5.0.tar.gz (63 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting texterrors<1.0.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading texterrors-0.5.1.tar.gz (23 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Installing backend dependencies ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting cloudpickle (from nemo-toolkit[asr])[m
+[31m-  Downloading cloudpickle-3.1.1-py3-none-any.whl.metadata (7.1 kB)[m
+[31m-Collecting fiddle (from nemo-toolkit[asr])[m
+[31m-  Downloading fiddle-0.3.0-py3-none-any.whl.metadata (2.3 kB)[m
+[31m-Requirement already satisfied: hydra-core<=1.3.2,>1.3 in c:\users\brian\parakeet-writer-master\venv_parak[m
+[31m-eet_py311\lib\site-packages (from nemo-toolkit[asr]) (1.3.2)[m
+[31m-Collecting lightning<=2.4.0,>2.2.1 (from nemo-toolkit[asr])[m
+[31m-  Downloading lightning-2.4.0-py3-none-any.whl.metadata (38 kB)[m
+[31m-Requirement already satisfied: omegaconf<=2.3 in c:\users\brian\parakeet-writer-master\venv_parakeet_py31[m
+[31m-1\lib\site-packages (from nemo-toolkit[asr]) (2.3.0)[m
+[31m-Collecting peft (from nemo-toolkit[asr])[m
+[31m-  Downloading peft-0.15.2-py3-none-any.whl.metadata (13 kB)[m
+[31m-Collecting torchmetrics>=0.11.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading torchmetrics-1.7.2-py3-none-any.whl.metadata (21 kB)[m
+[31m-Collecting transformers<=4.52.0,>=4.51.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)[m
+[31m-Collecting wandb (from nemo-toolkit[asr])[m
+[31m-  Downloading wandb-0.20.1-py3-none-win_amd64.whl.metadata (10 kB)[m
+[31m-Collecting webdataset>=0.2.86 (from nemo-toolkit[asr])[m
+[31m-  Downloading webdataset-0.2.111-py3-none-any.whl.metadata (15 kB)[m
+[31m-Collecting datasets (from nemo-toolkit[asr])[m
+[31m-  Downloading datasets-3.6.0-py3-none-any.whl.metadata (19 kB)[m
+[31m-Collecting inflect (from nemo-toolkit[asr])[m
+[31m-  Downloading inflect-7.5.0-py3-none-any.whl.metadata (24 kB)[m
+[31m-Collecting mediapy==1.1.6 (from nemo-toolkit[asr])[m
+[31m-  Downloading mediapy-1.1.6-py3-none-any.whl.metadata (4.8 kB)[m
+[31m-Collecting pandas (from nemo-toolkit[asr])[m
+[31m-  Downloading pandas-2.3.0-cp311-cp311-win_amd64.whl.metadata (19 kB)[m
+[31m-Collecting sacremoses>=0.0.43 (from nemo-toolkit[asr])[m
+[31m-  Downloading sacremoses-0.1.1-py3-none-any.whl.metadata (8.3 kB)[m
+[31m-Collecting sentencepiece<1.0.0 (from nemo-toolkit[asr])[m
+[31m-  Downloading sentencepiece-0.2.0-cp311-cp311-win_amd64.whl.metadata (8.3 kB)[m
+[31m-Collecting num2words (from nemo-toolkit[asr])[m
+[31m-  Downloading num2words-0.5.14-py3-none-any.whl.metadata (13 kB)[m
+[31m-Collecting ipython (from mediapy==1.1.6->nemo-toolkit[asr])[m
+[31m-  Downloading ipython-9.3.0-py3-none-any.whl.metadata (4.4 kB)[m
+[31m-Collecting matplotlib (from mediapy==1.1.6->nemo-toolkit[asr])[m
+[31m-  Downloading matplotlib-3.10.3-cp311-cp311-win_amd64.whl.metadata (11 kB)[m
+[31m-Collecting Pillow (from mediapy==1.1.6->nemo-toolkit[asr])[m
+[31m-  Downloading pillow-11.2.1-cp311-cp311-win_amd64.whl.metadata (9.1 kB)[m
+[31m-Collecting llvmlite<0.45,>=0.44.0dev0 (from numba==0.61.0->nemo-toolkit[asr])[m
+[31m-  Downloading llvmlite-0.44.0-cp311-cp311-win_amd64.whl.metadata (5.0 kB)[m
+[31m-Requirement already satisfied: antlr4-python3-runtime==4.9.* in c:\users\brian\parakeet-writer-master\ven[m
+[31m-v_parakeet_py311\lib\site-packages (from hydra-core<=1.3.2,>1.3->nemo-toolkit[asr]) (4.9.3)[m
+[31m-Requirement already satisfied: PyYAML<8.0,>=5.4 in c:\users\brian\parakeet-writer-master\venv_parakeet_py[m
+[31m-311\lib\site-packages (from lightning<=2.4.0,>2.2.1->nemo-toolkit[asr]) (6.0.2)[m
+[31m-Collecting lightning-utilities<2.0,>=0.10.0 (from lightning<=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading lightning_utilities-0.14.3-py3-none-any.whl.metadata (5.6 kB)[m
+[31m-Collecting packaging (from nemo-toolkit[asr])[m
+[31m-  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)[m
+[31m-Requirement already satisfied: typing-extensions<6.0,>=4.4.0 in c:\users\brian\parakeet-writer-master\ven[m
+[31m-v_parakeet_py311\lib\site-packages (from lightning<=2.4.0,>2.2.1->nemo-toolkit[asr]) (4.12.2)[m
+[31m-Collecting pytorch-lightning (from lightning<=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading pytorch_lightning-2.5.1.post0-py3-none-any.whl.metadata (20 kB)[m
+[31m-Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<2026.0,>=2022.5.0->lightning<=2.4.0,>2.2.1->nemo[m
+[31m--toolkit[asr])[m
+[31m-  Downloading aiohttp-3.12.12-cp311-cp311-win_amd64.whl.metadata (7.9 kB)[m
+[31m-Collecting pybind11 (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Using cached pybind11-2.13.6-py3-none-any.whl.metadata (9.5 kB)[m
+[31m-Collecting plac (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Downloading plac-1.4.5-py2.py3-none-any.whl.metadata (5.9 kB)[m
+[31m-Collecting loguru (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)[m
+[31m-Collecting termcolor (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Downloading termcolor-3.1.0-py3-none-any.whl.metadata (6.4 kB)[m
+[31m-Collecting Levenshtein (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Downloading levenshtein-0.27.1-cp311-cp311-win_amd64.whl.metadata (3.6 kB)[m
+[31m-Collecting regex (from texterrors<1.0.0->nemo-toolkit[asr])[m
+[31m-  Downloading regex-2024.11.6-cp311-cp311-win_amd64.whl.metadata (41 kB)[m
+[31m-Requirement already satisfied: filelock in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib\[m
+[31m-site-packages (from torch->nemo-toolkit[asr]) (3.13.1)[m
+[31m-Requirement already satisfied: networkx in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib\[m
+[31m-site-packages (from torch->nemo-toolkit[asr]) (3.3)[m
+[31m-Requirement already satisfied: jinja2 in c:\users\brian\parakeet-writer-master\venv_parakeet_py311\lib\si[m
+[31m-te-packages (from torch->nemo-toolkit[asr]) (3.1.4)[m
+[31m-Requirement already satisfied: sympy==1.13.1 in c:\users\brian\parakeet-writer-master\venv_parakeet_py311[m
+[31m-\lib\site-packages (from torch->nemo-toolkit[asr]) (1.13.1)[m
+[31m-Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\brian\parakeet-writer-master\venv_parakeet_[m
+[31m-py311\lib\site-packages (from sympy==1.13.1->torch->nemo-toolkit[asr]) (1.3.0)[m
+[31m-Collecting colorama (from tqdm>=4.41.0->nemo-toolkit[asr])[m
+[31m-  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)[m
+[31m-Collecting requests (from transformers<=4.52.0,>=4.51.0->nemo-toolkit[asr])[m
+[31m-  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)[m
+[31m-Collecting tokenizers<0.22,>=0.21 (from transformers<=4.52.0,>=4.51.0->nemo-toolkit[asr])[m
+[31m-  Downloading tokenizers-0.21.1-cp39-abi3-win_amd64.whl.metadata (6.9 kB)[m
+[31m-Collecting safetensors>=0.4.3 (from transformers<=4.52.0,>=4.51.0->nemo-toolkit[asr])[m
+[31m-  Downloading safetensors-0.5.3-cp38-abi3-win_amd64.whl.metadata (3.9 kB)[m
+[31m-Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->ligh[m
+[31m-tning<=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)[m
+[31m-Collecting aiosignal>=1.1.2 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightning<=[m
+[31m-2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)[m
+[31m-Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightning<=2.4[m
+[31m-.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)[m
+[31m-Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightning<[m
+[31m-=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading frozenlist-1.7.0-cp311-cp311-win_amd64.whl.metadata (19 kB)[m
+[31m-Collecting multidict<7.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightnin[m
+[31m-g<=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading multidict-6.4.4-cp311-cp311-win_amd64.whl.metadata (5.5 kB)[m
+[31m-Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightning<=[m
+[31m-2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading propcache-0.3.2-cp311-cp311-win_amd64.whl.metadata (12 kB)[m
+[31m-Collecting yarl<2.0,>=1.17.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0->lightning<[m
+[31m-=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading yarl-1.20.1-cp311-cp311-win_amd64.whl.metadata (76 kB)[m
+[31m-Collecting idna>=2.0 (from yarl<2.0,>=1.17.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2026.0,>=2022.5.0-[m
+[31m->lightning<=2.4.0,>2.2.1->nemo-toolkit[asr])[m
+[31m-  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)[m
+[31m-Collecting audioread>=2.1.9 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading audioread-3.0.1-py3-none-any.whl.metadata (8.4 kB)[m
+[31m-Collecting click>=7.1.1 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)[m
+[31m-Collecting cytoolz>=0.10.1 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading cytoolz-1.0.1-cp311-cp311-win_amd64.whl.metadata (4.7 kB)[m
+[31m-Collecting intervaltree>=3.1.0 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading intervaltree-3.1.0.tar.gz (32 kB)[m
+[31m-  Installing build dependencies ... done[m
+[31m-  Getting requirements to build wheel ... done[m
+[31m-  Preparing metadata (pyproject.toml) ... done[m
+[31m-Collecting tabulate>=0.8.1 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading tabulate-0.9.0-py3-none-any.whl.metadata (34 kB)[m
+[31m-Collecting lilcom>=1.1.0 (from lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading lilcom-1.8.1-cp311-cp311-win_amd64.whl.metadata (3.1 kB)[m
+[31m-Collecting toolz>=0.8.0 (from cytoolz>=0.10.1->lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading toolz-1.0.0-py3-none-any.whl.metadata (5.1 kB)[m
+[31m-Collecting sortedcontainers<3.0,>=2.0 (from intervaltree>=3.1.0->lhotse>=1.26.0->nemo-toolkit[asr])[m
+[31m-  Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)[m
+[31m-Collecting joblib>=1.0 (from librosa>=0.10.1->nemo-toolkit[asr])[m
+[31m-  Downloading joblib-1.5.1-py3-none-any.whl.metadata (5.6 kB)[m
+[31m-Collecting decorator>=4.3.0 (from librosa>=0.10.1->nemo-toolkit[asr])[m
+[31m-  Downloading decorator-5.2.1-py3-none-any.whl.metadata (3.9 kB)[m
+[31m-Collecting pooch>=1.1 (from librosa>=0.10.1->nemo-toolkit[asr])[m
+[31m-  Downloading pooch-1.8.2-py3-none-any.whl.metadata (10 kB)[m
+[31m-Collecti

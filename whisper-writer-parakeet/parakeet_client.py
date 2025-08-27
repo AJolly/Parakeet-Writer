@@ -9,6 +9,7 @@ import time
 import tempfile
 import uuid
 from pathlib import Path
+from utils import ConfigManager
 
 class ParakeetClient:
     def __init__(self):
@@ -26,12 +27,16 @@ class ParakeetClient:
         """
         try:
             if not os.path.exists(audio_file_path):
-                print(f"DEBUG: Audio file not found: {audio_file_path}")
+                ConfigManager.log_error(f"Audio file not found: {audio_file_path}")
                 return ""
             
             # Generate unique request ID
             request_id = str(uuid.uuid4())
-            print(f"DEBUG: Generated request ID: {request_id}")
+            
+            # Only show request details when debugging client communication
+            if ConfigManager.should_log_feature('client_debug'):
+                ConfigManager.log_client_debug(f"Request ID: {request_id}")
+                ConfigManager.log_client_debug(f"Audio file: {os.path.basename(audio_file_path)}")
             
             # Create request
             request = {
@@ -43,7 +48,6 @@ class ParakeetClient:
             request_file = os.path.join(self.request_dir, f'{request_id}.json')
             with open(request_file, 'w') as f:
                 json.dump(request, f)
-            print(f"DEBUG: Wrote request file: {request_file}")
             
             # Wait for response
             response_file = os.path.join(self.response_dir, f'{request_id}.json')
@@ -55,36 +59,43 @@ class ParakeetClient:
                         with open(response_file, 'r') as f:
                             response = json.load(f)
                         
-                        print(f"DEBUG: Received response: {response}")
-                        
                         # Clean up response file
                         os.unlink(response_file)
                         
                         if response.get('status') == 'success':
-                            return response.get('text', '')
+                            text = response.get('text', '')
+                            
+                            # Always show transcription results - this is critical for debugging
+                            if text and text.strip():
+                                ConfigManager.log_success(f"Transcription: '{text}'")
+                            else:
+                                ConfigManager.log_error("Empty transcription result received")
+                            
+                            return text
                         else:
-                            print(f"DEBUG: Server returned error status: {response}")
+                            ConfigManager.log_error(f"Server error: {response}")
                             return ""
                             
                     except Exception as e:
-                        print(f"DEBUG: Error reading response: {e}")
+                        ConfigManager.log_error(f"Error reading response: {e}")
                         return ""
                 
                 time.sleep(0.1)  # Check every 100ms
             
-            print(f"DEBUG: Timeout after {timeout} seconds")
+            ConfigManager.log_error(f"Timeout after {timeout} seconds")
             # Timeout - clean up request file if it still exists
             try:
                 if os.path.exists(request_file):
                     os.unlink(request_file)
-                    print("DEBUG: Cleaned up request file after timeout")
+                    if ConfigManager.should_log_feature('client_debug'):
+                        ConfigManager.log_client_debug("Cleaned up request file after timeout")
             except:
                 pass
                 
             return ""
             
         except Exception as e:
-            print(f"DEBUG: Client error: {e}")
+            ConfigManager.log_error(f"Client error: {e}")
             return ""
     
     def is_server_running(self):

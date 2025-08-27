@@ -45,9 +45,9 @@ def transcribe_with_server(audio_data, sample_rate=16000):
                 return transcribe_with_subprocess_fallback(audio_data, sample_rate)
             
             # Get transcription from server with longer timeout
-            ConfigManager.console_print('DEBUG: Sending request to Parakeet server...')
+            #ConfigManager.console_print('DEBUG: Sending request to Parakeet server...')
             transcription = client.transcribe_audio_file(temp_path, timeout=30)
-            ConfigManager.console_print(f'DEBUG: Server response: "{transcription}"')
+#            ConfigManager.console_print(f'DEBUG: Server response: "{transcription}"')
             
             # Create result object with text attribute
             class TranscriptionResult:

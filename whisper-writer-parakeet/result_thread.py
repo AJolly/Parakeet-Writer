@@ -89,7 +89,7 @@ class ResultThread(QThread):
             end_time = time.time()
 
             transcription_time = end_time - start_time
-            ConfigManager.console_print(f'Transcription completed in {transcription_time:.2f} seconds. Post-processed line: {result}')
+            #ConfigManager.console_print(f'Transcription completed in {transcription_time:.2f} seconds. Post-processed line: {result}')
 
             if not self.is_running:
                 return

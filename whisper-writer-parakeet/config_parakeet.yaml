@@ -2,10 +2,10 @@
 # This configuration is optimized for the Parakeet model and avoids Whisper-specific settings
 
 recording_options:
-  recording_mode: "voice_activity_detection"  # Safe options: continuous, voice_activity_detection, press_to_toggle, hold_to_record
+  recording_mode: "continuous"  # Perfect for hands-free operation - automatically records and transcribes continuously
   sample_rate: 16000  # Parakeet works well with 16kHz
-  min_duration: 100  # Minimum recording duration in ms
-  silence_duration: 900  # How long to wait for silence before stopping (ms)
+  min_duration: 500  # Minimum recording duration in ms
+  silence_duration: 800  # Increased to 1.2 seconds for better natural speech detection
   sound_device: null  # null = default device, or specify device index
 
 model_options:
@@ -35,7 +35,7 @@ model_options:
 
 # Key bindings - SAFE TO MODIFY
 key_bindings:
-  activation_key: "ctrl+shift+space"
+  activation_key: "ctrl+shift+space"  # This becomes your START/STOP toggle for the entire continuous session
 
 # Post-processing options - SAFE TO MODIFY
 post_processing:
@@ -46,4 +46,4 @@ post_processing:
 # Misc options - SAFE TO MODIFY
 misc:
   hide_status_window: false
-  noise_on_completion: true 
+  noise_on_completion: false  # Audio feedback when transcription completes 

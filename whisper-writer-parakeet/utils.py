@@ -1,5 +1,7 @@
 import yaml
 import os
+import logging
+from datetime import datetime
 
 class ConfigManager:
     _instance = None
@@ -8,6 +10,7 @@ class ConfigManager:
         """Initialize the ConfigManager instance."""
         self.config = None
         self.schema = None
+        self.logger = None
 
     @classmethod
     def initialize(cls, schema_path=None):
@@ -17,6 +20,7 @@ class ConfigManager:
             cls._instance.schema = cls._instance.load_config_schema(schema_path)
             cls._instance.config = cls._instance.load_default_config()
             cls._instance.load_user_config()
+            cls._instance._setup_logging()
 
     @classmethod
     def get_schema(cls):
@@ -140,3 +144,51 @@ class ConfigManager:
         """Print a message to the console if enabled in the configuration."""
         if cls._instance and cls._instance.config.get('misc', {}).get('print_to_terminal', True):
             print(message)
+
+    @classmethod
+    def should_log_feature(cls, feature):
+        """Check if logging for a specific feature is enabled."""
+        if not cls._instance:
+            return False
+        
+        logging_config = cls._instance.config.get('misc', {}).get('logging', {})
+        return logging_config.get(feature, False)
+
+    @classmethod
+    def log_transcription_debug(cls, message):
+        """Log transcription debugging info only when transcription debugging is enabled."""
+        if cls.should_log_feature('transcription_debug'):
+            print(f"[TRANSCRIPTION DEBUG] {message}")
+
+    @classmethod
+    def log_recording_debug(cls, message):
+        """Log recording debugging info only when recording debugging is enabled."""
+        if cls.should_log_feature('recording_debug'):
+            print(f"[RECORDING DEBUG] {message}")
+
+    @classmethod
+    def log_client_debug(cls, message):
+        """Log client debugging info only when client debugging is enabled."""
+        if cls.should_log_feature('client_debug'):
+            print(f"[CLIENT DEBUG] {message}")
+
+    @classmethod
+    def log_audio_debug(cls, message):
+        """Log audio processing debugging info only when audio debugging is enabled."""
+        if cls.should_log_feature('audio_debug'):
+            print(f"[AUDIO DEBUG] {message}")
+
+    @classmethod
+    def log_status(cls, message):
+        """Log status messages that are always shown (like errors and important info)."""
+        print(f"[STATUS] {message}")
+
+    @classmethod
+    def log_error(cls, message):
+        """Log error messages that are always shown."""
+        print(f"[ERROR] {message}")
+
+    @classmethod
+    def log_success(cls, message):
+        """Log success messages that are always shown."""
+        print(f"[SUCCESS] {message}")

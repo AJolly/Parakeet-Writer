@@ -24,7 +24,29 @@ class WhisperWriterApp(QObject):
         """
         super().__init__()
         self.app = QApplication(sys.argv)
-        self.app.setWindowIcon(QIcon(os.path.join('assets', 'ww-logo.png')))
+        
+        # Set application icon with fallback
+        try:
+            # Try to use a built-in microphone icon from PyQt5's standard icon set
+            icon = QIcon.fromTheme('audio-input-microphone')
+            
+            # If theme icon is not available, use a fallback approach
+            if icon.isNull():
+                # Try to load from assets directory with proper path resolution
+                assets_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets')
+                logo_path = os.path.join(assets_path, 'ww-logo.png')
+                
+                if os.path.exists(logo_path):
+                    icon = QIcon(logo_path)
+                else:
+                    # Use PyQt5's built-in microphone icon as final fallback
+                    from PyQt5.QtWidgets import QStyle
+                    icon = self.app.style().standardIcon(QStyle.SP_MediaVolume)
+            
+            self.app.setWindowIcon(icon)
+        except Exception as e:
+            print(f"Error setting application icon: {e}")
+            # Continue without icon if there's an error
 
         ConfigManager.initialize()
 
@@ -69,30 +91,77 @@ class WhisperWriterApp(QObject):
         """
         Create the system tray icon and its context menu.
         """
-        self.tray_icon = QSystemTrayIcon(QIcon(os.path.join('assets', 'ww-logo.png')), self.app)
+        try:
+            # Try to use a built-in microphone icon from PyQt5's standard icon set
+            icon = QIcon.fromTheme('audio-input-microphone')
+            
+            # If theme icon is not available, use a fallback approach
+            if icon.isNull():
+                # Try to load from assets directory with proper path resolution
+                assets_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets')
+                logo_path = os.path.join(assets_path, 'ww-logo.png')
+                
+                if os.path.exists(logo_path):
+                    icon = QIcon(logo_path)
+                else:
+                    # Use PyQt5's built-in microphone icon as final fallback
+                    from PyQt5.QtWidgets import QStyle
+                    icon = self.app.style().standardIcon(QStyle.SP_MediaVolume)
+            
+            # Create the tray icon
+            self.tray_icon = QSystemTrayIcon(icon, self.app)
+            
+            # Set tooltip for better user experience
+            self.tray_icon.setToolTip('WhisperWriter - Voice to Text')
+            
+            # Create context menu
+            tray_menu = QMenu()
 
-        tray_menu = QMenu()
+            show_action = QAction('WhisperWriter Main Menu', self.app)
+            show_action.triggered.connect(self.main_window.show)
+            tray_menu.addAction(show_action)
 
-        show_action = QAction('WhisperWriter Main Menu', self.app)
-        show_action.triggered.connect(self.main_window.show)
-        tray_menu.addAction(show_action)
+            settings_action = QAction('Open Settings', self.app)
+            settings_action.triggered.connect(self.settings_window.show)
+            tray_menu.addAction(settings_action)
 
-        settings_action = QAction('Open Settings', self.app)
-        settings_action.triggered.connect(self.settings_window.show)
-        tray_menu.addAction(settings_action)
+            exit_action = QAction('Exit', self.app)
+            exit_action.triggered.connect(self.exit_app)
+            tray_menu.addAction(exit_action)
 
-        exit_action = QAction('Exit', self.app)
-        exit_action.triggered.connect(self.exit_app)
-        tray_menu.addAction(exit_action)
+            self.tray_icon.setContextMenu(tray_menu)
+            
+            # Show the tray icon
+            if self.tray_icon.isSystemTrayAvailable():
+                self.tray_icon.show()
+                # Connect double-click to show main window
+                self.tray_icon.activated.connect(self.on_tray_icon_activated)
+                print("System tray icon created successfully")
+            else:
+                print("Warning: System tray is not available on this system")
+                self.tray_icon = None
+                
+        except Exception as e:
+            print(f"Error creating tray icon: {e}")
+            self.tray_icon = None
 
-        self.tray_icon.setContextMenu(tray_menu)
-        self.tray_icon.show()
+    def on_tray_icon_activated(self, reason):
+        """
+        Handle tray icon activation events.
+        """
+        if reason == QSystemTrayIcon.DoubleClick:
+            self.main_window.show()
+            self.main_window.raise_()
+            self.main_window.activateWindow()
 
     def cleanup(self):
         if self.key_listener:
             self.key_listener.stop()
         if self.input_simulator:
             self.input_simulator.cleanup()
+        if hasattr(self, 'tray_icon') and self.tray_icon:
+            self.tray_icon.hide()
+            self.tray_icon = None
 
     def exit_app(self):
         """
@@ -166,13 +235,13 @@ class WhisperWriterApp(QObject):
         """
         When the transcription is complete, type the result and start listening for the activation key again.
         """
-        ConfigManager.console_print(f'DEBUG: Received transcription result: "{result}" (length: {len(result)})')
+#        ConfigManager.console_print(f'DEBUG: Received transcription result: "{result}" (length: {len(result)})')
         
         if result and result.strip():
             ConfigManager.console_print(f'DEBUG: Typing text: "{result}"')
             self.input_simulator.typewrite(result)
-        else:
-            ConfigManager.console_print('DEBUG: Empty or whitespace-only result, not typing anything')
+#        else:
+#            ConfigManager.console_print('DEBUG: Empty or whitespace-only result, not typing anything')
 
         if ConfigManager.get_config_value('misc', 'noise_on_completion'):
             AudioPlayer(os.path.join('assets', 'beep.wav')).play(block=True)

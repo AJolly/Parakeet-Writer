@@ -109,9 +109,9 @@ class BaseWindow(QMainWindow):
         Create a rounded rectangle with a semi-transparent white background.
         """
         path = QPainterPath()
-        path.addRoundedRect(QRectF(self.rect()), 20, 20)
+        path.addRoundedRect(QRectF(self.rect()), 10, 10)
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
-        painter.setBrush(QBrush(QColor(255, 255, 255, 220)))
+        painter.setBrush(QBrush(QColor(255, 143, 0, 220)))
         painter.setPen(Qt.NoPen)
         painter.drawPath(path)
